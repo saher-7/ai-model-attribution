@@ -32,9 +32,9 @@ Decision: target met (val >=90%25), no tuning/bounce-back needed
 Notes: Logistic regression on stylometric features (sentence length, punctuation ratios, hedge rate, type-token ratio)
 
 ## Step 6 — Attribution features
-Status: not started
-Outputs: [top features from ablation.json]
-Notes: 
+Status: done
+Outputs: minus_perplexity best (44.7%25 on sample, 7-class, chance=14%25); all_features worse (35.4%25) - perplexity needs scaling
+Notes: Ablation run on sample (300/class train, ~100/class val), not full data. Features: stylometric + POS dist + discourse markers + per-class bigram perplexity
 
 ## Step 7 — Attribution model
 Status: not started
@@ -63,6 +63,7 @@ Notes:
 
 ## Currently blocked on / needs a decision
 [Leave empty if nothing. Otherwise: describe exactly what the next agent needs to resolve before continuing.]
+
 
 
 
