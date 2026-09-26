@@ -11,8 +11,8 @@ Outputs: [folders/files created]
 Notes: 
 
 ## Step 2 — Virtual environment
-Status: not started
-Outputs: [requirements.txt committed? y/n]
+Status: done
+Outputs: requirements.txt committed - y
 Notes: 
 
 ## Step 3 — Data collection
@@ -63,3 +63,4 @@ Notes:
 
 ## Currently blocked on / needs a decision
 [Leave empty if nothing. Otherwise: describe exactly what the next agent needs to resolve before continuing.]
+
