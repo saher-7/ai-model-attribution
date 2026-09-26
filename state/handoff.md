@@ -26,10 +26,10 @@ Outputs: data/splits/train.csv, val.csv, test.csv (dataset's native splits used,
 Notes: Label_A = binary human/AI, Label_B = 7-class (6 models + Human_Story), balanced ~7321/class in train
 
 ## Step 5 — Binary detector
-Status: not started
-Result: [accuracy/F1 from results/metrics/binary.json]
-Decision: [target met? floor met? bounced back?]
-Notes: 
+Status: done
+Result: val acc 91.26%25, val F1 95.04%25; test acc 88.23%25, test F1 93.18%25
+Decision: target met (val >=90%25), no tuning/bounce-back needed
+Notes: Logistic regression on stylometric features (sentence length, punctuation ratios, hedge rate, type-token ratio)
 
 ## Step 6 — Attribution features
 Status: not started
@@ -63,6 +63,7 @@ Notes:
 
 ## Currently blocked on / needs a decision
 [Leave empty if nothing. Otherwise: describe exactly what the next agent needs to resolve before continuing.]
+
 
 
 
