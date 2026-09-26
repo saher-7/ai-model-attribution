@@ -1,0 +1,52 @@
+{
+  "stylometric_only": {
+    "accuracy": 0.39571428571428574,
+    "n_features": 9
+  },
+  "minus_pos": {
+    "accuracy": 0.3557142857142857,
+    "n_features": 17
+  },
+  "minus_discourse": {
+    "accuracy": 0.35428571428571426,
+    "n_features": 25
+  },
+  "minus_perplexity": {
+    "accuracy": 0.4471428571428571,
+    "n_features": 19
+  },
+  "minus_sent_len": {
+    "accuracy": 0.37,
+    "n_features": 24
+  },
+  "all_features": {
+    "accuracy": 0.35428571428571426,
+    "n_features": 26
+  },
+  "ranked_by_accuracy": [
+    [
+      "minus_perplexity",
+      0.4471428571428571
+    ],
+    [
+      "stylometric_only",
+      0.39571428571428574
+    ],
+    [
+      "minus_sent_len",
+      0.37
+    ],
+    [
+      "minus_pos",
+      0.3557142857142857
+    ],
+    [
+      "minus_discourse",
+      0.35428571428571426
+    ],
+    [
+      "all_features",
+      0.35428571428571426
+    ]
+  ]
+}
