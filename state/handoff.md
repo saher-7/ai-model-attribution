@@ -6,7 +6,7 @@ Done by: saher
 Notes: Python 3.13.12, Git 2.51.0, VS Code 1.138.0 confirmed
 
 ## Step 1 — Git repo and structure
-Status: in progress
+Status: done
 Outputs: [folders/files created]
 Notes: 
 
@@ -16,9 +16,9 @@ Outputs: requirements.txt committed - y
 Notes: 
 
 ## Step 3 — Data collection
-Status: not started
-Outputs: [dataset name + path in data/raw/]
-Notes: 
+Status: done
+Outputs: Rajarshi-Roy-research/Defactify_Text_Dataset -> data/raw/attribution_dataset
+Notes: Already comes with train/validation/test splits (51247/10983/10963); 6 model classes (Gemma-2-9B, Mistral-7B, Qwen-2-72B, LLaMA-8B, Yi-Large, GPT-4o) + human
 
 ## Step 4 — Data split
 Status: not started
@@ -63,4 +63,6 @@ Notes:
 
 ## Currently blocked on / needs a decision
 [Leave empty if nothing. Otherwise: describe exactly what the next agent needs to resolve before continuing.]
+
+
 
