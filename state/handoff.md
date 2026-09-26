@@ -21,9 +21,9 @@ Outputs: Rajarshi-Roy-research/Defactify_Text_Dataset -> data/raw/attribution_da
 Notes: Already comes with train/validation/test splits (51247/10983/10963); 6 model classes (Gemma-2-9B, Mistral-7B, Qwen-2-72B, LLaMA-8B, Yi-Large, GPT-4o) + human
 
 ## Step 4 — Data split
-Status: not started
-Outputs: [path to splits, SEED used]
-Notes: 
+Status: done
+Outputs: data/splits/train.csv, val.csv, test.csv (dataset's native splits used, not re-split); SEED = 42
+Notes: Label_A = binary human/AI, Label_B = 7-class (6 models + Human_Story), balanced ~7321/class in train
 
 ## Step 5 — Binary detector
 Status: not started
@@ -63,6 +63,7 @@ Notes:
 
 ## Currently blocked on / needs a decision
 [Leave empty if nothing. Otherwise: describe exactly what the next agent needs to resolve before continuing.]
+
 
 
 
