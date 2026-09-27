@@ -62,7 +62,16 @@ Status: not started
 Notes: 
 
 ## Currently blocked on / needs a decision
-[Leave empty if nothing. Otherwise: describe exactly what the next agent needs to resolve before continuing.]
+Nothing blocking. Core deliverable complete (binary + attribution both meet target/floor, calibration + robustness done). Currently attempting optional improvement: LightGBM swap for attribution model (attempt 1 of 2 allowed tuning attempts), possibly paired with properly-scaled perplexity feature (attempt 2) if attempt 1 looks promising. Per spec Section 4, stop after 2 attempts regardless of outcome and move to Step 10 (paper draft). Qwen-2-72B vs Mistral-7B confusion may be a genuine hard case worth reporting as a finding rather than continuing to chase.
+
+## Full results summary (as of this point)
+BINARY (Step 5): val acc 91.26%25/F1 95.04%25, test acc 88.23%25/F1 93.18%25. Target (90%25) met on val, floor (80%25) cleared on test.
+ABLATION (Step 6): best feature set minus_perplexity at 44.7%25 (sample, 7-class, chance=14%25); raw all_features (unscaled perplexity) worse at 35.4%25.
+ATTRIBUTION (Step 7): 4-class (GPT-4o, Llama-8B, Mistral-7B, Qwen-2-72B). Val acc 66.05%25/F1 65.94%25, test acc 53.68%25/F1 50.01%25. Target (55%25) met on val, floor (40%25) cleared on test. Confusion matrix: GPT-4o 89%25 correct, Mistral-7B 70%25 correct, Llama-8B 38%25 correct, Qwen-2-72B only 18%25 correct (mostly confused with Mistral-7B). Fix applied: StandardScaler (unscaled version had macro F1 37%25, below floor - this was the 1 tuning attempt used in Step 7).
+CALIBRATION (Step 8): post-cal test acc 48.84%25, macro F1 44.28%25, mean confidence 47.18%25 (close to actual acc - reasonably honest).
+ROBUSTNESS (Step 8): original acc 55.20%25/F1 51.18%25 vs paraphrased acc 55.00%25/F1 51.01%25 - only 0.2pt drop. Caveat: light word-swap/sentence-reorder only, not aggressive paraphrasing.
+DECISION: All Spec Section 3 targets/floors met. Complete presentable result achieved per Section 4. Step 9 (6-model stretch) skipped as optional/not required. Currently trying 1-2 more tuning attempts on attribution model before moving to write-up.
+
 
 
 
