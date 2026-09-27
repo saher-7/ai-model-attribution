@@ -44,9 +44,9 @@ Decision: target met (val), floor cleared with margin (test). 1 tuning attempt n
 Notes: Confusion matrix shows GPT-4o (89%25) and Mistral-7B (70%25) well-separated; Qwen-2-72B (18%25) often confused with Mistral-7B; Llama-8B (38%25) moderate
 
 ## Step 8 — Calibration and robustness
-Status: not started
-Result: [calibration + robustness numbers]
-Notes: 
+Status: done
+Result: Calibration - post-cal test acc 48.84%25, macro F1 44.28%25, mean confidence 47.18%25 (close to actual acc, reasonably honest). Robustness - accuracy drop only 0.2pts under light paraphrasing (55.20%25 -> 55.00%25)
+Notes: Robustness test used light word-swap/sentence-reorder paraphrasing only (n=500 sample) - not tested against heavier paraphrasing. Flag this limitation in write-up.
 
 ## Step 9 — 6-model stretch (optional)
 Status: skipped
@@ -63,6 +63,7 @@ Notes:
 
 ## Currently blocked on / needs a decision
 [Leave empty if nothing. Otherwise: describe exactly what the next agent needs to resolve before continuing.]
+
 
 
 
