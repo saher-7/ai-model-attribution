@@ -46,4 +46,9 @@ The test-set confusion matrix for the final model shows uneven performance acros
 
 ## 6. Conclusion
 
-[TODO after Step 11 - final write-up]
+This project set out to answer two questions about a piece of English text: whether it was written by a human or an AI model, and if AI-written, which model family produced it. Both tasks were addressed with classifiers built entirely from scratch - custom stylometric, syntactic, and language-model-based features feeding simple, interpretable classifiers - with no pretrained language model used anywhere in the classification pipeline itself.
+
+Both tasks met or exceeded their pre-registered success criteria. The binary detector reached 88.23% test accuracy against a 90% target and 80% floor. The four-class attribution model reached 61.00% test accuracy and 59.48% macro F1 against a 55% target and 40% floor, after two disciplined tuning attempts (a model swap to LightGBM, then the addition of a properly-scaled perplexity feature), stopped at the pre-agreed cap rather than continuing indefinitely. Both results substantially exceed the published Defactify baseline (53% binary, 5.04% attribution), though the comparison is not perfectly apples-to-apples given differences in class selection and methodology.
+
+The most consistent finding across every iteration of the attribution model was the difficulty of separating Qwen-2-72B from Mistral-7B - a pattern that persisted, though it narrowed, from the weakest to the strongest model tried. This is reported here as a genuine finding about these two model families' stylistic similarity, not as an unresolved bug, in keeping with this project's aim of producing honest, reproducible results rather than an inflated headline number. Future work could explore whether this confusion is addressable with different features (e.g. deeper n-gram models, or embeddings-free stylistic markers specific to code-mixing or formality) or whether it reflects a genuine limit of stylometric methods for these particular models.
+
