@@ -35,7 +35,7 @@ def discourse_marker_rate(text):
     return {"discourse_marker_rate": count / n_words}
 
 def pos_distribution(text, nlp):
-    doc = nlp(text[:5000])  # cap length for speed
+    doc = nlp(text[:1500])  # cap length for speed, avoid pathological slow cases
     total = len(doc) if len(doc) > 0 else 1
     counts = {tag: 0 for tag in POS_TAGS_OF_INTEREST}
     for token in doc:
@@ -50,3 +50,4 @@ def extract_attribution_features(text, nlp=None):
     features.update(discourse_marker_rate(text))
     features.update(pos_distribution(text, nlp))
     return features
+
