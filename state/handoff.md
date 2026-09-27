@@ -54,8 +54,8 @@ Result:
 Notes: 
 
 ## Step 10 — Paper draft
-Status: [sections written so far]
-Notes: 
+Status: Problem Statement + Related Work stubbed (TODOs, need prose); Method + Results sections stubbed with pointers to exact results/metrics/*.json files to pull from; Limitations stubbed with 3 known items so far
+Notes: Run log (logs/run_log.md) backfilled with dated entries covering Steps 0-8. paper/draft.md created.
 
 ## Step 11 — Final write-up
 Status: not started
@@ -71,6 +71,7 @@ ATTRIBUTION (Step 7): 4-class (GPT-4o, Llama-8B, Mistral-7B, Qwen-2-72B). Val ac
 CALIBRATION (Step 8): post-cal test acc 48.84%25, macro F1 44.28%25, mean confidence 47.18%25 (close to actual acc - reasonably honest).
 ROBUSTNESS (Step 8): original acc 55.20%25/F1 51.18%25 vs paraphrased acc 55.00%25/F1 51.01%25 - only 0.2pt drop. Caveat: light word-swap/sentence-reorder only, not aggressive paraphrasing.
 DECISION: All Spec Section 3 targets/floors met. Complete presentable result achieved per Section 4. Step 9 (6-model stretch) skipped as optional/not required. Currently trying 1-2 more tuning attempts on attribution model before moving to write-up.
+
 
 
 
