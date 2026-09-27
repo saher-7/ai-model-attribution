@@ -1,0 +1,9 @@
+{
+  "sample_size": 500,
+  "original_accuracy": 0.552,
+  "original_macro_f1": 0.5118168275632455,
+  "paraphrased_accuracy": 0.55,
+  "paraphrased_macro_f1": 0.5101009698673814,
+  "accuracy_drop": 0.0020000000000000018,
+  "macro_f1_drop": 0.0017158576958641314
+}
