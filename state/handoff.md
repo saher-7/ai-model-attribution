@@ -37,11 +37,11 @@ Outputs: minus_perplexity best (44.7%25 on sample, 7-class, chance=14%25); all_f
 Notes: Ablation run on sample (300/class train, ~100/class val), not full data. Features: stylometric + POS dist + discourse markers + per-class bigram perplexity
 
 ## Step 7 — Attribution model
-Status: not started
-Model classes chosen: [e.g. GPT / Claude / LLaMA]
-Result: [accuracy/macro F1 from attribution.json]
-Decision: [target met? floor met? bounced back?]
-Notes: 
+Status: done
+Model classes chosen: GPT-4o, Llama-8B, Mistral-7B, Qwen-2-72B
+Result: val acc 66.05%25, val macro F1 65.94%25; test acc 53.68%25, test macro F1 50.01%25
+Decision: target met (val), floor cleared with margin (test). 1 tuning attempt needed (StandardScaler fixed GPT-4o bias; unscaled version had macro F1 37%25, below floor)
+Notes: Confusion matrix shows GPT-4o (89%25) and Mistral-7B (70%25) well-separated; Qwen-2-72B (18%25) often confused with Mistral-7B; Llama-8B (38%25) moderate
 
 ## Step 8 — Calibration and robustness
 Status: not started
@@ -63,6 +63,7 @@ Notes:
 
 ## Currently blocked on / needs a decision
 [Leave empty if nothing. Otherwise: describe exactly what the next agent needs to resolve before continuing.]
+
 
 
 
