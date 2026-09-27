@@ -37,11 +37,11 @@ Outputs: minus_perplexity best (44.7%25 on sample, 7-class, chance=14%25); all_f
 Notes: Ablation run on sample (300/class train, ~100/class val), not full data. Features: stylometric + POS dist + discourse markers + per-class bigram perplexity
 
 ## Step 7 — Attribution model
-Status: done
+Status: done (final, after 2 post-hoc tuning attempts beyond initial fix)
 Model classes chosen: GPT-4o, Llama-8B, Mistral-7B, Qwen-2-72B
-Result: val acc 66.05%25, val macro F1 65.94%25; test acc 53.68%25, test macro F1 50.01%25
-Decision: target met (val), floor cleared with margin (test). 1 tuning attempt needed (StandardScaler fixed GPT-4o bias; unscaled version had macro F1 37%25, below floor)
-Notes: Confusion matrix shows GPT-4o (89%25) and Mistral-7B (70%25) well-separated; Qwen-2-72B (18%25) often confused with Mistral-7B; Llama-8B (38%25) moderate
+Result: FINAL MODEL = LightGBM + log-scaled perplexity. Val acc 73.99%25, val macro F1 73.94%25; test acc 61.00%25, test macro F1 59.48%25
+Decision: target (55%25) and floor (40%25) both cleared with strong margin. Progression: LogisticRegression+scaling (test acc 53.68%25/F1 50.01%25) -> LightGBM swap (test acc 60.79%25/F1 59.23%25, big jump) -> LightGBM+perplexity (test acc 61.00%25/F1 59.48%25, small further gain). Stopped per spec Section 4 (2-attempt cap) after this.
+Notes: Confusion matrix (final model): GPT-4o 92%25 correct, Mistral-7B 69%25 correct, Llama-8B 47%25 correct, Qwen-2-72B 35%25 correct (up from 18%25 with LogisticRegression - still weakest, mostly confused with Mistral-7B - reportable finding, not pursued further). Models/metrics for all 3 attempts saved in results/ for comparison in paper.
 
 ## Step 8 — Calibration and robustness
 Status: done
@@ -71,6 +71,7 @@ ATTRIBUTION (Step 7): 4-class (GPT-4o, Llama-8B, Mistral-7B, Qwen-2-72B). Val ac
 CALIBRATION (Step 8): post-cal test acc 48.84%25, macro F1 44.28%25, mean confidence 47.18%25 (close to actual acc - reasonably honest).
 ROBUSTNESS (Step 8): original acc 55.20%25/F1 51.18%25 vs paraphrased acc 55.00%25/F1 51.01%25 - only 0.2pt drop. Caveat: light word-swap/sentence-reorder only, not aggressive paraphrasing.
 DECISION: All Spec Section 3 targets/floors met. Complete presentable result achieved per Section 4. Step 9 (6-model stretch) skipped as optional/not required. Currently trying 1-2 more tuning attempts on attribution model before moving to write-up.
+
 
 
 
