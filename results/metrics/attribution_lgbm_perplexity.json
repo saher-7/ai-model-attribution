@@ -1,0 +1,40 @@
+{
+  "model": "LightGBM + log-scaled perplexity",
+  "selected_classes": [
+    "GPT-4o",
+    "Llama-8B",
+    "Mistral-7B",
+    "Qwen-2-72B"
+  ],
+  "val_accuracy": 0.739913889331845,
+  "val_macro_f1": 0.739371374255141,
+  "test_accuracy": 0.6099856436433243,
+  "test_macro_f1": 0.5947952832153149,
+  "confusion_matrix": [
+    [
+      1449,
+      12,
+      82,
+      26
+    ],
+    [
+      284,
+      741,
+      373,
+      167
+    ],
+    [
+      166,
+      154,
+      1080,
+      168
+    ],
+    [
+      159,
+      133,
+      721,
+      554
+    ]
+  ],
+  "seed": 42
+}
